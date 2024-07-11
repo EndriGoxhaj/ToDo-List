@@ -7,10 +7,22 @@
 </head>
 <body>
     <h1>Hello</h1>
-    <button class="btn">a</button>
-    <button class="btn">b</button>
-    <button id="new">new
-    </button>
+    <div id="sidebar">
+        <button class="btn" id="addTaskButton">new</button>
+        <button class="btn" id="addProjectButton">new project</button>
+    </div>
+    <dialog id="taskDialog">
+        <form action="#">
+            <input type="text" name="" id="taskTitle" placeholder="Title">
+            <input type="text" name="" id="taskDescription" placeholder="description">
+            <input type="date" name="" id="taskDueDate">
+            <button class="btn" id="submitTask">Submit</button>
+        </form>
+    </dialog>
+    <dialog id="projectDialog">
+        <input type="text" name="" id="projectTitle" placeholder="project title">
+        <button class="btn" id="submitProject">Submit</button>
+    </dialog>
     <div  id="content"></div>
 </body>
 </html>
