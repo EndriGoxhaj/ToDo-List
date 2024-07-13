@@ -12,24 +12,31 @@ const Task = function (title, description, dueDate, priority, filter){
     this.filter = filter;
 }
 
-let taskA = new Task('a', 'a', 'a', 'a', 'a');
-let taskB = new Task('b', 'b', 'b', 'b', 'b');
-let taskC = new Task('c', 'c', 'c', 'c', 'a');
+let taskA = new Task('Do Homework', 'Have to do homework soon', '08/07/2024', 'High Priority', '');
+let taskB = new Task('Clean Room', 'Room needs to be cleaned', '08/07/2024', 'High Priority', '');
+let taskC = new Task('Do shopping', 'Fridge is empty', '08/07/2024', 'High Priority', '');
 taskArray.push(taskA);
 taskArray.push(taskB);
 taskArray.push(taskC);
 
 
+
 const createTask = ()=>{
     let newTitle = dom.taskTitle.value;
-    let newDescription = dom.taskDescription;
-    let newTask = new Task(newTitle, newDescription);
+    let newDescription = dom.taskDescription.value;
+    let newDueDate = dom.taskDueDate.value;
+    let newPriority = '5';
+    let newFilter = '';
+    if(dom.currentProject.textContent !== 'home'){
+        newFilter = dom.currentProject.textContent;
+    }
+    let newTask = new Task(newTitle, newDescription, newDueDate, newPriority, newFilter);
     taskArray.push(newTask);
 }
 
 return{
     taskArray,
-    createTask
+    createTask,
 }
 })();
 export{

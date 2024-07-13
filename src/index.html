@@ -6,10 +6,16 @@
     <title>ToDo-List</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>To Do list by Endri Goxhaj</h1>
+<div id="wrapper">
     <div id="sidebar">
-        <button class="btn" id="addTaskButton">new</button>
-        <button class="btn" id="addProjectButton">new project</button>
+        <div id="sidebarhome">
+            <button class="btn" id="addTaskButton">new</button>
+            <button class="btn" id="addProjectButton">new project</button>
+            <h3>projects</h3>
+        </div>
+
+        <div id="sidebarProjects"></div>
     </div>
     <dialog id="taskDialog">
         <form action="#">
@@ -23,6 +29,11 @@
         <input type="text" name="" id="projectTitle" placeholder="project title">
         <button class="btn" id="submitProject">Submit</button>
     </dialog>
-    <div  id="content"></div>
+    <div id="content">
+        <h1 id="currentProject">Home</h1>
+        <div id="tasks"></div>
+    </div>
+
+</div>
 </body>
 </html>
