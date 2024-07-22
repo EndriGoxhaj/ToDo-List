@@ -13,14 +13,14 @@ const dom =(()=>{
     const taskTitle = document.getElementById('taskTitle');
     const taskDescription = document.getElementById('taskDescription');
     const taskDueDate = document.getElementById('taskDueDate')
-    const submitTask = document.getElementById('submitTask');
+    const form = document.querySelector('form');
 
     const projectDialog = document.getElementById('projectDialog')
     const addProjectBtn = document.getElementById('addProjectButton');
     const projectTitle = document.getElementById('projectTitle')
     const submitProject = document.getElementById('submitProject');
 
-    currentProject.textContent = 'home';
+    currentProject.textContent = 'Home';
     let repetitionCount = 1;
 
 
@@ -32,9 +32,16 @@ const dom =(()=>{
         taskDialog.showModal();
         
     });
-    submitTask.addEventListener('click', ()=>{
-        for(let i = 0; i < logic.taskArray.length; i++){
-            if(logic.taskArray[i].title === taskTitle.value){
+form.addEventListener('submit', ()=>{
+        for(let i = 0; i <= logic.taskArray.length; i++){
+            if(logic.taskArray.length === 0){
+                logic.createTask();
+                displayTasks();
+                console.log(logic.taskArray);
+                taskDialog.close()
+                break;
+            }
+            else if(logic.taskArray[i].title === taskTitle.value){
                 taskTitle.value = taskTitle.value + ' ' + '(' + repetitionCount + ')';
                 logic.createTask();
                 displayTasks();
@@ -70,7 +77,7 @@ const dom =(()=>{
     }
     const displayTasks = ()=>{       
         clearContent();
-        if(currentProject.textContent === 'home'){
+        if(currentProject.textContent === 'Home'){
         for (let i = 0; i < logic.taskArray.length; i++){
             let taskDiv = document.createElement('div');
             taskDiv.classList.add('taskDiv');
@@ -91,7 +98,7 @@ const dom =(()=>{
 
             let taskDivPriority = document.createElement('div');
             taskDivPriority.textContent = logic.taskArray[i].priority;
-            taskDivPriority.classList.add('classDivPriority');
+            taskDivPriority.classList.add('taskDivPriority');
 
             let taskDivDate = document.createElement('div')
             taskDivDate.textContent = logic.taskArray[i].dueDate;
@@ -134,7 +141,7 @@ const dom =(()=>{
             taskDiv.classList.add('taskDiv');
 
             let taskDivLeft = document.createElement('div');
-            taskDivLeft.classList.add('classDivLeft');
+            taskDivLeft.classList.add('taskDivLeft');
 
             let taskDivTitle = document.createElement('div');
             taskDivTitle.textContent = logic.taskArray[i].title;
@@ -149,25 +156,31 @@ const dom =(()=>{
 
             let taskDivPriority = document.createElement('div');
             taskDivPriority.textContent = logic.taskArray[i].priority;
-            taskDivPriority.classList.add('classDivPriority');
+            taskDivPriority.classList.add('taskDivPriority');
 
             let taskDivDate = document.createElement('div')
             taskDivDate.textContent = logic.taskArray[i].dueDate;
             taskDivDate.classList.add('taskDivDate');
 
+            let taskDivButtons = document.createElement('div');
+            taskDivButtons.classList.add('taskDivButtons');
             let taskDivComplete = document.createElement('button');
             taskDivComplete.textContent = 'C';
+            taskDivComplete.classList.add('btn');
             let taskDivOptions = document.createElement('button');
             taskDivOptions.textContent = 'O';
-    
+            taskDivOptions.classList.add('btn');
+
             taskDivLeft.appendChild(taskDivTitle);
             taskDivLeft.appendChild(taskDivDescription);
             taskDivRight.appendChild(taskDivPriority);
             taskDivRight.appendChild(taskDivDate);
             taskDiv.appendChild(taskDivLeft);
             taskDiv.appendChild(taskDivRight);
-            taskDiv.appendChild(taskDivComplete);
-            taskDiv.appendChild(taskDivOptions);
+            taskDiv.appendChild(taskDivButtons)
+            taskDivButtons.appendChild(taskDivComplete);
+            taskDivButtons.appendChild(taskDivOptions);
+            
             if(currentProject.textContent === logic.taskArray[i].filter){
             taskDivTitle.textContent = logic.taskArray[i].title;
 

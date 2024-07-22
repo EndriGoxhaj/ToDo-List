@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo-List</title>
+    <title>TaskEase</title>
 </head>
 <body>
-    <h1>To Do list by Endri Goxhaj</h1>
+    <h1>TaskEase by Endri Goxhaj</h1>
 <div id="wrapper">
     <div id="sidebar">
         <div id="sidebarhome">
-            <button class="btn" id="addTaskButton">new</button>
-            <button class="btn" id="addProjectButton">new project</button>
-            <h3>projects</h3>
+            <div id="homeTasks" class="sidebarDiv">Home</div>
+            <div id="completedTasks" class="sidebarDiv">Completed</div>
+            <div id="Today" class="sidebarDiv">Today</div>
+            <div id="highPriority" class="projectPriority">High priority</div>
+            <div id="mediumPriority" class="projectPriority">Medium priority</div>
+            <div id="lowPriority" class="projectPriority">Low priority</div>
         </div>
 
-        <div id="sidebarProjects"></div>
+        <div id="sidebarProjects">
+            <div id="projectsHeader">
+                <h3>Projects</h3>
+                <button class="btn" id="addProjectButton">+</button>
+            </div>
+        </div>
     </div>
     <dialog id="taskDialog">
         <form action="#">
-            <input type="text" name="" id="taskTitle" placeholder="Title">
+            <input type="text" name="" id="taskTitle" placeholder="Title" required>
             <input type="text" name="" id="taskDescription" placeholder="description">
             <input type="date" name="" id="taskDueDate">
-            <button class="btn" id="submitTask">Submit</button>
+            <input type="submit" id="submitTask">
         </form>
     </dialog>
     <dialog id="projectDialog">
@@ -30,7 +38,10 @@
         <button class="btn" id="submitProject">Submit</button>
     </dialog>
     <div id="content">
-        <h1 id="currentProject">Home</h1>
+        <div id="contentHeader">
+            <h1 id="currentProject"></h1>
+            <button class="btn" id="addTaskButton">+</button>
+        </div>
         <div id="tasks"></div>
     </div>
 

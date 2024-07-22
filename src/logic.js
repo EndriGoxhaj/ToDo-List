@@ -13,7 +13,7 @@ const Task = function (title, description, dueDate, priority, filter){
 }
 
 let taskA = new Task('Do Homework', 'Have to do homework soon', '08/07/2024', 'High Priority', '');
-let taskB = new Task('Clean Room', 'Room needs to be cleaned', '08/07/2024', 'High Priority', '');
+let taskB = new Task('Clean Room', 'Room needs to be cleaned', '08/07/2024', 'Medium Priority', '');
 let taskC = new Task('Do shopping', 'Fridge is empty', '08/07/2024', 'High Priority', '');
 taskArray.push(taskA);
 taskArray.push(taskB);
