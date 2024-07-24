@@ -20,14 +20,13 @@ taskArray.push(taskB);
 taskArray.push(taskC);
 
 
-
 const createTask = ()=>{
     let newTitle = dom.taskTitle.value;
     let newDescription = dom.taskDescription.value;
     let newDueDate = dom.taskDueDate.value;
     let newPriority = '5';
     let newFilter = '';
-    if(dom.currentProject.textContent !== 'home'){
+    if(dom.currentProject.textContent !== 'Home'){
         newFilter = dom.currentProject.textContent;
     }
     let newTask = new Task(newTitle, newDescription, newDueDate, newPriority, newFilter);
