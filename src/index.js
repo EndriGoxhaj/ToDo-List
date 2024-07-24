@@ -1,6 +1,3 @@
-import './style.css'
+import "./style.css";
 import { dom } from "./dom";
 dom.displayTasks();
-
-
-
