@@ -15,7 +15,6 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  /*background-image: linear-gradient( 111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58% );}*/
   background-color: rgb(255, 255, 255);
   font-family: Myfont;
 }
@@ -53,12 +52,9 @@ body {
 .sidebarDiv:hover {
   cursor: pointer;
   background-color: #d8d2d2;
+  -webkit-filter: brightness(80%);
 }
-.projectPriority {
-  padding: 5px;
-  border-radius: 5px;
-  margin: 2px;
-}
+
 #highPriority {
   background-color: #f9a1a1;
 }
@@ -67,10 +63,6 @@ body {
 }
 #lowPriority {
   background-color: #c2ecc4;
-}
-.projectPriority:hover {
-  -webkit-filter: brightness(80%);
-  cursor: pointer;
 }
 #sidebar > #sidebarProjects {
   grid-row: 2/3;
@@ -148,9 +140,10 @@ body {
 }
 .taskDivRight > .taskDivPriority {
   color: #000000;
-  padding: 1px;
-  border-radius: 25px;
+  padding: 2px;
+  border-radius: 5px;
   font-size: 0.9em;
+  width: fit-content;
 }
 .taskDivRight > .taskDivDate {
   font-size: 0.8em;
@@ -158,11 +151,12 @@ body {
 .taskDiv > .taskDivButtons {
   grid-column: 10/11;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
-
-.btn {
+.plusbtn {
+  font-family: MyFont;
   border-radius: 25px;
   border: none;
   height: 10px;
@@ -170,11 +164,45 @@ body {
   padding: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-.btn:hover {
+.btn {
+  font-size: 0.6em;
+  font-family: MyFont;
+  border-radius: 25px;
+  border: none;
+  height: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:hover,
+.plusbtn:hover {
   cursor: pointer;
   background-color: #fe7171;
 }
 h3 {
   margin: 0;
+}
+input {
+  font-family: Myfont;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: Myfont;
+}
+dialog {
+  border: none;
+  font-family: Myfont;
+}
+.radio {
+  font-size: 0.2em;
+}
+label {
+  font-size: 0.7em;
 }

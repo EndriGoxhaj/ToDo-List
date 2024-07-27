@@ -1,3 +1,3 @@
 import "./style.css";
-import { dom } from "./dom";
-dom.displayTasks();
+import { logic } from "./logic";
+logic.displayTasks();
