@@ -62,7 +62,7 @@ const logic = (() => {
     } else {
       newDueDate = dom.taskDueDate.value;
     }
-    let newPriority = "High Priority";
+    let newPriority = dom.taskPriority.value;
     let newFilter = "";
     if (dom.currentProject.textContent !== "Home") {
       newFilter = dom.currentProject.textContent;

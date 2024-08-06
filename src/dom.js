@@ -14,6 +14,7 @@ const dom = (() => {
   const taskTitle = document.getElementById("taskTitle");
   const taskDescription = document.getElementById("taskDescription");
   const taskDueDate = document.getElementById("taskDueDate");
+  const taskPriority = document.getElementById("prioritySelection");
   const form = document.getElementById("tasksForm");
 
   const projectDialog = document.getElementById("projectDialog");
@@ -625,6 +626,7 @@ const dom = (() => {
     taskDueDate,
     projectTitle,
     currentProject,
+    taskPriority,
     clearContent,
     todayTasks,
     homeTasks,

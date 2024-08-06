@@ -200,8 +200,8 @@ dialog {
   border: none;
   font-family: Myfont;
 }
-.radio {
-  font-size: 0.2em;
+#prioritySelection {
+  font-family: Myfont;
 }
 label {
   font-size: 0.7em;

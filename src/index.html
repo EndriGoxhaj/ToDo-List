@@ -42,15 +42,11 @@
             placeholder="description"
             required
           />
-          <div class="radios">
-            <div class="radiotitle">Priority:</div>
-            <input type="radio" class="radio" name="radio" id="Low" />
-            <label for="Low">Low</label>
-            <input type="radio" class="radio" name="radio" id="Medium" />
-            <label for="Medium">Medium</label>
-            <input type="radio" name="radio" class="radio" id="High" />
-            <label for="High">High</label>
-          </div>
+          <select id="prioritySelection" name="Car">
+            <option value="High Priority">High</option>
+            <option value="Medium Priority">Medium</option>
+            <option value="Low Priority">Low</option>
+          </select>
           <div class="taskFormDueDate">Due Date</div>
           <input type="date" name="" id="taskDueDate" />
           <button class="btn">Submit</button>
