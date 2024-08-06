@@ -32,7 +32,8 @@ const dom = (() => {
     taskDialog.showModal();
   });
 
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
     logic.createTask();
     logic.displayTasks();
     taskDialog.close();
@@ -44,7 +45,8 @@ const dom = (() => {
     projectDialog.showModal();
   });
 
-  submitProject.addEventListener("submit", () => {
+  submitProject.addEventListener("submit", (e) => {
+    e.preventDefault();
     sidebarProjects.appendChild(projects.createProject());
     projectDialog.close();
   });
